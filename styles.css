@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100&display=swap');
+
+@font-face {
+  font-family: Cyber;
+  src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+  font-display: swap;
+}
+:root {
+   --bg-colour: #333; /* Background colour - Dark blue */
+   --fg-colour-one: #161616; /* Accent 1 */
+   --fg-colour-two: #c5c5c5; /* Accent 2*/
+   --fg-colour-three: #ED1E79; /* Accent 3*/
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Flex', sans-serif;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-colour);
+}
+  /*header CSS styles end*/
+header{
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+h1 {
+    font-weight: 0px;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*game initialisation*/
+#game-init{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 60%;
+  height: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10%;
+  padding: 3em;
+  gap: 1em;
+  justify-content: center;
+  text-align: center;
+  color: #FFF;
+  background-color: #27266050; 
+  border: solid 2px var(--fg-colour-two);
+  box-shadow: inset 0 0 0.75em 0 var(--fg-colour-two), 0 0 1.15em 0 var(--fg-colour-two);
+  border-radius: 10px;
+}
+
+select {
+  width: 4em;
+  height: 3em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*game*/
+.game-area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+.game-grid {
+  display: grid;
+  /* grid-template-columns: repeat(5, 1fr); */
+  grid-gap: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.row-block{
+  border: 1px solid var(--fg-colour-two);
+  min-width: 60px;
+  min-height: 60px;
+  font-size: 50px;
+  font-weight: bold;
+  color: gainsboro;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip {
+  animation: 0.5s linear flipping;
+}
+
+#keyboard-container {
+  height: 200px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto 8px;
+  touch-action: manipulation;
+}
+
+.keyboard-row button{
+  font-family: inherit;
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  height: 58px;
+  cursor: pointer;
+  color: white;
+  flex-grow: 1;
+  text-transform: uppercase;
+  margin-right: 6px;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.standard-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: var(--h3-size);
+  background-color: var(--fg-colour-one);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  color: white;
+}
+
+.spacer-half {
+  flex-grow: 0.5;
+}
+
+.unused {
+  background-color: var(--fg-colour-one);
+}
+.correct {
+  background-color: #6AAA64;
+  color: white;
+  border-color: white;
+}
+
+.present {
+  background-color: #C9B458;
+  color: white;
+  border-color: white;
+}
+
+.absent {
+  background-color: #787C7E;
+  color: white;
+  border-color:white;
+}
+
+
+/* modal */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+#modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.close-button {
+  float: right;
+  margin-top: 10%;
+  margin-right: 10%;
+  width: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}

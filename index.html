@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Wordle PPY</title>
+  </head>
+  <body>
+    <header><h1>Wordle PPY</h1></header>
+    <div id='game-init'>
+      <label for="length-of-word">Letras:</label>
+      <select title="length-of-word" id="length-of-word" value="5">
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+      </select>
+      <label for="number-of-guesses">Palabras:</label>
+      <select title="number-of-guesses"  id="number-of-guesses" value="6">
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+      </select>
+      <button class='standard-button' id="start-button" type="submit">Empezar</button>
+  </div>
+       
+  </body>
+  <script src="script.js"></script>
+</html>
